@@ -11,16 +11,18 @@
 
 # **************************************************
 book_list = []
-class Books:
+e_book_list = []
+class Book:
     just_info = "Book-object contains information about book : id, title, author, publisher etc.  "
 
     @staticmethod
     def simple_stat_method():
-        print(Books.just_info)
+        print(Book.just_info)
 
     @classmethod
-    def class_method(cls):
-        pass
+    def e_book(cls, e_id, title, format_type, mem_size, none):
+        e_book = cls(e_id, title, format_type, mem_size, none)
+        return e_book
 
     def __init__(self, id, title, author, publisher, type_of_binding):
         self.id = id

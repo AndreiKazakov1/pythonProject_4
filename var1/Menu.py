@@ -1,5 +1,5 @@
 # **************************************************************************
-from var1.Books import book_list, Books
+from var1.Book import book_list, Book, e_book_list
 
 
 def main():
@@ -12,7 +12,8 @@ def main():
         print("4. Find book by year of publication")
         print("5. Delete book from list by id")
         print("6. Use @staticmethod")
-        print("7. Exit program")
+        print("7. Create e_book")
+        print("8. Exit program")
         print("*** *** ***     *** *** ***")
         print()
         comand = int(input("Enter the command :"))
@@ -33,9 +34,12 @@ def main():
             delete_by_id(book_list)
 
         elif comand == 6:
-            Books.simple_stat_method()
+            Book.simple_stat_method()
 
         elif comand == 7:
+            create_e_book(e_book_list)
+
+        elif comand == 8:
             print("EXIT FROM PROGRAM ...")
             break
         else:
@@ -54,7 +58,7 @@ def add_book():
         price = float(input("insert price (float value) :"))
         type_of_binding = str(input("insert type_of_binding (string value) :"))
 
-        book = Books(id, title, author, publisher, type_of_binding)
+        book = Book(id, title, author, publisher, type_of_binding)
         book.year_of_publication = year_of_publication
         book.number_of_pages = number_of_pages
         book.price = price
@@ -113,5 +117,17 @@ def delete_by_id(book_list):
             show_all_books(book_list)
         else:
             print("no such ID, back to main menu ...")
+
+def create_e_book(e_book_list):
+    print("creating e_book")
+    e_id = int(input("insert e_id (int value) :"))
+    title = str(input("insert title (string value) :"))
+    format_type = str(input("insert format_type (string value) :"))
+    mem_size = int(input("insert mem_size (int value) :"))
+    new_e_book = Book.e_book(e_id, title, format_type, mem_size, None)
+    print("e_book added successfully")
+    print(new_e_book)
+    e_book_list.append(new_e_book)
+
 
 # *********************************************************
