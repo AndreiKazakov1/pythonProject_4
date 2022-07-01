@@ -109,5 +109,9 @@ def delete_by_id(book_list):
     for book in book_list:
         if del_id == book.id:
             book_list.remove(book)
-    print("book list after delete is :")
-    show_all_books(book_list)
+            print("after delete :")
+            show_all_books(book_list)
+        else:
+            print("no such ID, back to main menu ...")
+
+# *********************************************************

@@ -9,11 +9,10 @@
 # a)	список книг заданного автора;
 #  б) список книг, выпущенных после заданного года.
 
-
+# **************************************************
 book_list = []
 class Books:
     just_info = "Book-object contains information about book : id, title, author, publisher etc.  "
-
 
     @staticmethod
     def simple_stat_method():
@@ -28,9 +27,9 @@ class Books:
         self.title = title
         self.author = author
         self.publisher = publisher
-        self.__year_of_publication = 1
-        self.__number_of_pages = 1
-        self.__price = 1
+        self.__year_of_publication = None
+        self.__number_of_pages = None
+        self.__price = None
         self.type_of_binding = type_of_binding
 
     def own_method(self):
