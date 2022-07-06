@@ -12,7 +12,7 @@ def main():
         print("4. Find book by year of publication")
         print("5. Delete book from list by id")
         print("6. Use @staticmethod")
-        print("7. Create e_book")
+        print("7. How old is book ?")
         print("8. Exit program")
         print("*** *** ***     *** *** ***")
         print()
@@ -37,7 +37,7 @@ def main():
             Book.simple_stat_method()
 
         elif comand == 7:
-            create_e_book(e_book_list)
+            how_old_is_book(book_list)
 
         elif comand == 8:
             print("EXIT FROM PROGRAM ...")
@@ -106,6 +106,7 @@ def find_book_by_year(book_list):
     else:
         print(f"no books found after this {year} year, back to main menu ...")
 
+
 def delete_by_id(book_list):
     print("current ")
     show_all_books(book_list)
@@ -118,16 +119,16 @@ def delete_by_id(book_list):
         else:
             print("no such ID, back to main menu ...")
 
-def create_e_book(e_book_list):
-    print("creating e_book")
-    e_id = int(input("insert e_id (int value) :"))
-    title = str(input("insert title (string value) :"))
-    format_type = str(input("insert format_type (string value) :"))
-    mem_size = int(input("insert mem_size (int value) :"))
-    new_e_book = Book.e_book(e_id, title, format_type, mem_size, None)
-    print("e_book added successfully")
-    print(new_e_book)
-    e_book_list.append(new_e_book)
 
+def how_old_is_book(book_list):
+    s_id = int(input("input ID of  book from book list : "))
+    for book in book_list:
+        if s_id == book.id:
+            c_id = book.id
+            year = book.year_of_publication
+            book2 = Book.book_year(c_id, year)
+            print(f'book with id = {c_id} is {book2.title} years old')  # title is 2-nd param == year
+        else:
+            print("no such ID, back to main menu ...")
 
 # *********************************************************

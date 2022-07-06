@@ -10,6 +10,8 @@
 #  б) список книг, выпущенных после заданного года.
 
 # **************************************************
+from datetime import date
+
 book_list = []
 e_book_list = []
 class Book:
@@ -20,9 +22,8 @@ class Book:
         print(Book.just_info)
 
     @classmethod
-    def e_book(cls, e_id, title, format_type, mem_size, none):
-        e_book = cls(e_id, title, format_type, mem_size, none)
-        return e_book
+    def book_year(cls, id, year):
+        return cls(id, date.today().year - year, author=0, publisher=0, type_of_binding=0)
 
     def __init__(self, id, title, author, publisher, type_of_binding):
         self.id = id
