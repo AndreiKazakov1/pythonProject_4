@@ -13,6 +13,7 @@ def main():
         print("5. Delete book from list by id")
         print("6. Use @staticmethod")
         print("7. How old is book ?")
+
         print("8. Exit program")
         print("*** *** ***     *** *** ***")
         print()

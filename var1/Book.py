@@ -83,6 +83,27 @@ class Book:
     def insert_data_price(self):
         self.price = int(input("insert new price :"))
 
+# magic methods
+
+    def __lt__(self, other):
+        return self.__year_of_publication < other.__year_of_publication
+
+    def __gt__(self, other):
+        return self.__year_of_publication > other.__year_of_publication
+
+    def __le__(self, other):
+        return self.__year_of_publication <= other.__year_of_publication
+
+    def __ge__(self, other):
+        return self.__year_of_publication >= other.__year_of_publication
+
+    def __eq__(self, other):
+        return self.__year_of_publication == other.__year_of_publication
+
+    def __ne__(self, other):
+        return self.__year_of_publication != other.__year_of_publication
+
+
     def __str__(self):
         return f"id : {self.id} || title : {self.title} || author :{self.author} || publisher :{self.publisher} || " \
                f"year_of_publication :{self.__year_of_publication} || number_of_pages :{self.__number_of_pages} ||" \
